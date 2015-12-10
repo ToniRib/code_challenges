@@ -35,6 +35,13 @@ class CountUniqueWordsTest < Minitest::Test
     assert_equal 20, counter.count(filepath)
   end
 
+  def test_counts_unique_words_in_medium_file
+    counter = CountUniqueWords.new
+    filepath = './swift_stats/medium_lyrics.txt'
+
+    assert_equal 38, counter.count(filepath)
+  end
+
   def test_counts_unique_words_in_lyrics_file
     counter = CountUniqueWords.new
     filepath = './swift_stats/lyrics.txt'

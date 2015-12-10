@@ -7,14 +7,13 @@ class CountUniqueWords
 
   def count(filepath)
     words = FileReader.new.read(filepath)
-    sanitized = sanitize(words)
-    unique(sanitized)
+    unique(sanitize(words))
   end
 
   def sanitize(words)
     words.map do |word|
       word.downcase.gsub(/[^a-z]/i, '')
-    end
+    end.reject { |w| w.empty? }
   end
 end
 
